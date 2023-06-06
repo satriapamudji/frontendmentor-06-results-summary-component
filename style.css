@@ -1,49 +1,284 @@
-# Front-end Style Guide
+/* Presets */
 
-## Layout
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
 
-The designs were created to the following widths:
+:root {
+  /* Primary Colors */
+  --light-red: hsl(0, 100%, 67%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+  --light-red-bg: hsl(0, 100%, 98%);
+  --orangey-yellow-bg: hsl(39, 100%, 98%);
+  --green-teal-bg: hsl(166, 100%, 98%);
+  --cobalt-blue-bg: hsl(234, 85%, 98%);
 
-- Mobile: 375px
-- Desktop: 1440px
+  /* Gradients */
 
-## Colors
+  --light-slate-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
 
-### Primary
+  /* Circle Colors */
 
-- Light red: hsl(0, 100%, 67%)
-- Orangey yellow: hsl(39, 100%, 56%)
-- Green teal: hsl(166, 100%, 37%)
-- Cobalt blue: hsl(234, 85%, 45%)
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
 
-## Gradients
+  /* Neutral Colors */
 
-- Light slate blue (background): hsl(252, 100%, 67%)
-- Light royal blue (background): hsl(241, 81%, 54%)
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --light-lavender-opacity: hsl(241, 100%, 89%, 0.51);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+  --dark-gray-blue-opacity: hsla(224, 30%, 27%, 0.5);
 
-- Violet blue (circle): hsla(256, 72%, 46%, 1)
-- Persian blue (circle): hsla(241, 72%, 46%, 0)
+  /* Other Variables */
 
+  --main-radius: 32px;
+  --secondary-radius: 12px;
+  --button-radius: 128px;
+}
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-### Neutral
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pale-blue);
+}
 
-- White: hsl(0, 0%, 100%)
-- Pale blue: hsl(221, 100%, 96%)
-- Light lavender: hsl(241, 100%, 89%)
-- Dark gray blue: hsl(224, 30%, 27%)
+h1 {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 72px;
+  color: var(--white);
+}
 
-### Notes
+h2 {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--white);
+}
 
-Use transparency to get the colour variations necessary to match the design. Hint: look into using `hsla()`.
+h3 {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--dark-gray-blue);
+}
 
-## Typography
+p {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
 
-### Body Copy
+.main-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-grow: 1;
+  background-color: var(--white);
+  border-radius: var(--main-radius);
+  height: 512px;
+  width: 736px;
+}
 
-- Font size (paragraphs): 18px
+.score-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+  border-radius: var(--main-radius);
+  width: 368px;
+  height: 512px;
+}
 
-### Font
+.score-card * {
+  margin: 0;
+  padding: 0;
+}
 
-- Family: [Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk)
-- Weights: 500, 700, 800
+.score-card-heading {
+  margin-top: 2.3rem;
+  margin-bottom: 2rem;
+}
+
+.score-card-heading h3 {
+  color: var(--light-lavender);
+}
+
+.score-card-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(var(--violet-blue), var(--persian-blue));
+  border-radius: 200px;
+}
+
+.bolded {
+  font-weight: 700;
+  color: var(--light-lavender-opacity);
+}
+
+.score-card-comments {
+  text-align: center;
+  margin-left: 2.8rem;
+  margin-right: 2.8rem;
+  margin-top: 1.8rem;
+}
+
+.score-card-comments p {
+  margin-top: 0.7rem;
+  color: var(--light-lavender);
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 368px;
+  height: 512px;
+}
+
+.summary-card * {
+  margin: 0;
+  padding: 0;
+}
+
+.summary-card-heading {
+  margin-top: 2.3rem;
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.summary-card-heading h3 {
+  margin-left: 0.6rem;
+}
+
+.summary-card-component,
+.summary-type,
+.summary-score {
+  display: flex;
+  flex-direction: row;
+}
+
+.summary-components {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.summary-card-component {
+  min-width: 288px;
+  height: 56px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--secondary-radius);
+  margin-bottom: 1rem;
+}
+
+.summary-component-001 .summary-type p {
+  color: var(--light-red);
+}
+
+.summary-component-001 {
+  background-color: var(--light-red-bg);
+}
+
+.summary-component-002 {
+  background-color: var(--orangey-yellow-bg);
+}
+
+.summary-component-002 .summary-type p {
+  color: var(--orangey-yellow);
+}
+
+.summary-component-003 {
+  background-color: var(--green-teal-bg);
+}
+
+.summary-component-003 .summary-type p {
+  color: var(--green-teal);
+}
+
+.summary-component-004 {
+  background-color: var(--cobalt-blue-bg);
+}
+
+.summary-component-004 .summary-type p {
+  color: var(--cobalt-blue);
+}
+
+.summary-type * {
+  margin-left: 0.7rem;
+}
+
+.summary-score * {
+  margin-left: 0.5rem;
+}
+
+.summary-score {
+  margin-right: 0.7rem;
+}
+
+.final-score {
+  font-weight: 700;
+}
+
+.maximum-score {
+  color: var(--dark-gray-blue-opacity);
+  font-weight: 700;
+}
+
+.summary-card-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
+
+.summary-card-button button {
+  min-width: 288px;
+  height: 56px;
+  border-radius: var(--button-radius);
+  border: none;
+  background-color: var(--dark-gray-blue);
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--white);
+}
+
+.attribution {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
