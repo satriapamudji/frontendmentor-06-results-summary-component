@@ -15,24 +15,22 @@
   <body>
     <!-- Main Content -->
     <main>
-      <div class="main-card">
-        <div class="score-card">
-          <div class="score-card-heading">
-            <h3>Your Result</h3>
-          </div>
-          <div class="score-card-score">
-            <h1>76</h1>
-            <p class="bolded">of 100</p>
-          </div>
-          <div class="score-card-comments">
-            <h2>Great</h2>
-            <p>
-              You scored higher than 65% of the people who have taken these
-              tests here!
-            </p>
-          </div>
-        </div>
-        <div class="summary-card">
+      <article class="main-card">
+        <section class="score-card">
+              <h3 class="score-card-heading">Your Result</h3>
+            <div class="score-card-score">
+              <h1>76</h1>
+              <p class="bolded">of 100</p>
+            </div>
+            <div class="score-card-comments">
+              <h2>Great</h2>
+              <p>
+                You scored higher than 65% of the people who have taken these
+                tests here!
+              </p>
+            </div>
+        </section>
+        <section class="summary-card">
           <div class="summary-card-heading">
             <h3>Summary</h3>
           </div>
@@ -46,10 +44,8 @@
                 />
                 <p>Reaction</p>
               </div>
-              <div class="summary-score">
-                <p class="final-score">80</p>
-                <p class="maximum-score">/</p>
-                <p class="maximum-score">100</p>
+              <div >
+                <p class="summary-score"><span>80</span> / 100</p>
               </div>
             </div>
             <!-- Summary Component 002 -->
@@ -61,10 +57,8 @@
                 />
                 <p>Memory</p>
               </div>
-              <div class="summary-score">
-                <p class="final-score">92</p>
-                <p class="maximum-score">/</p>
-                <p class="maximum-score">100</p>
+              <div >
+                <p class="summary-score"><span>92</span> / 100</p>
               </div>
             </div>
             <!-- Summary Component 003 -->
@@ -76,10 +70,8 @@
                 />
                 <p>Verbal</p>
               </div>
-              <div class="summary-score">
-                <p class="final-score">61</p>
-                <p class="maximum-score">/</p>
-                <p class="maximum-score">100</p>
+              <div >
+                <p class="summary-score"><span>61</span> / 100</p>
               </div>
             </div>
             <!-- Summary Component 004 -->
@@ -91,29 +83,35 @@
                 />
                 <p>Visual</p>
               </div>
-              <div class="summary-score">
-                <p class="final-score">72</p>
-                <p class="maximum-score">/</p>
-                <p class="maximum-score">100</p>
+              <div >
+                <p class="summary-score"><span>72</span> / 100</p>
               </div>
             </div>
             <!-- Summary Component End -->
           </div>
 
           <div class="summary-card-button">
-            <button>Continue</button>
+            <button type="button">Continue</button>
           </div>
-        </div>
+        </article>
       </div>
     </main>
     <!-- Footer Content -->
     <footer>
       <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Satria Pamudji</a>.
+        Challenge by 
+        <a 
+        href="https://www.frontendmentor.io?ref=challenge" 
+        target="_blank"
+        rel="noopener noreferrer"> 
+        Frontend Mentor</a> and coded by 
+        <a 
+        href="https://github.com/satriapamudji"
+        target="_blank"
+        rel="noopener noreferrer">
+        Satria Pamudji.
+      </a>
       </div>
-    </footer>
+    </footer> 
   </body>
 </html>
