@@ -190,10 +190,6 @@ h3 {
 }
 
 .score-card-score {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-top: 1.5rem;
   padding: 1.2rem 2.4rem;
   background: var(--gradient-02);
@@ -206,6 +202,7 @@ h3 {
 
 .bolded {
   color: var(--light-lavender-opacity);
+  text-align: center;
 }
 
 .score-card-comments {
@@ -296,18 +293,37 @@ h3 {
 }
 
 .summary-card-button button {
+  position: relative;
   padding: 1.125rem 8rem;
   border-radius: var(--button-radius);
   border: none;
   font-weight: var(--bold-font-weight);
   color: var(--white);
   background: var(--dark-gray-blue);
+  width: 100%;
+  z-index: 1;
+}
+
+.summary-card-button button::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: var(--button-radius);
+  background: var(--gradient-01);
   transition: var(--transition);
+  z-index: -1; /* We'll come back to this */
+  opacity: 0;
+}
+
+.summary-card-button button:hover::before {
+  opacity: 1;
 }
 
 .summary-card-button button:hover {
   cursor: pointer;
-  background: var(--gradient-01);
 }
 
 footer {
@@ -342,18 +358,23 @@ footer {
 
   .score-card {
     border-radius: var(--main-radius);
+    flex-grow: 1;
     max-width: 23rem;
-    max-height: 32rem;
-    padding: 2.375rem 3.375rem 2.5rem 3.5rem;
+    height: 32rem;
+    padding: 2.375rem 3.375rem;
   }
 
   .score-card-score {
-    margin-top: 2.175rem;
-    padding: 2.25rem 3.75rem;
+    margin-top: 1.5rem;
+    padding: 2.75rem 4.25rem;
+  }
+
+  .score-card-comments {
+    margin-top: 1.5rem;
   }
 
   .score-card-comments p {
-    margin-top: 0.75rem;
+    margin-top: 1rem;
   }
 
   .summary-card {
